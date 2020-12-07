@@ -48,13 +48,14 @@ class ArrayExercisesTest {
     @Test
     void testGetMinCombination(){
         int[] testArray = {3,6,1,3};
-        assertEquals(7,arrayExercises.getSmallestAdditionWithNumberMissing2(testArray));
-        assertEquals(7, arrayExercises.getSmallestAdditionWithNumberMissing(testArray));
+        assertEquals(7,arrayExercises.getSmallestPossibleCombination2(testArray));
+        assertEquals(7, arrayExercises.getSmallestPossibleCombination(testArray));
     }
 
     @Test
-    void testGetMacCombination(){
+    void testGetMaxCombination(){
         int[] testArray = {3,6,1,3};
-        assertEquals(12, arrayExercises.getLargestAdditionWithNumberMissing(testArray));
+        assertEquals(12, arrayExercises.getLargestPossibleCombination(testArray));
+        assertEquals(12, arrayExercises.getLargestPossibleCombination2(testArray));
     }
 }

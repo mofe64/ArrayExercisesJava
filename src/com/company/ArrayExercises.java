@@ -37,37 +37,37 @@ public class ArrayExercises {
         return lowest;
     }
 
-    public int getSmallestAdditionWithNumberMissing(int[] array) {
-        int largestValue = getMax(array);
-        int sum = sumArray(array);
-        int smallestCombo = sum - largestValue;
-        return smallestCombo;
+    public int getSmallestPossibleCombination(int[] array) {
+        return sumArray(array) - getMax(array);
     }
 
-    public int getLargestAdditionWithNumberMissing(int[] array) {
-        int smallestValue = getMin(array);
-        int sum = sumArray(array);
-        int smallestCombo = sum - smallestValue;
-        return smallestCombo;
+    public int getLargestPossibleCombination(int[] array) {
+        return sumArray(array) - getMin(array);
     }
 
 
-    public int getSmallestAdditionWithNumberMissing2(int[] array) {
+    public int getSmallestPossibleCombination2(int[] array) {
         int smallestCombo = Integer.MAX_VALUE;
-        int[] combinationArray = new int[array.length];
-        int tempSum = 0;
+        int tempSum = sumArray(array);
         for (int i = 0; i < array.length; i++) {
-            tempSum += array[i];
-        }
-        for (int i = 0; i < array.length; i++) {
-            int smallestCombinationWithoutCurrentNumber = tempSum - array[i];
-            System.out.println(smallestCombinationWithoutCurrentNumber);
-            combinationArray[i] = smallestCombinationWithoutCurrentNumber;
-            if (smallestCombo > combinationArray[i]) {
-                smallestCombo = combinationArray[i];
+            int possibleCombination = tempSum - array[i];
+            if (smallestCombo > possibleCombination) {
+                smallestCombo = possibleCombination;
             }
         }
         return smallestCombo;
+    }
+
+    public int getLargestPossibleCombination2(int[] array){
+        int largestPossibleCombo = Integer.MIN_VALUE;
+        int tempSum = sumArray(array);
+        for (int i=0; i < array.length; i++){
+            int possibleCombination = tempSum - array[i];
+            if(largestPossibleCombo < possibleCombination){
+                largestPossibleCombo = possibleCombination;
+            }
+        }
+        return largestPossibleCombo;
     }
 
 }
