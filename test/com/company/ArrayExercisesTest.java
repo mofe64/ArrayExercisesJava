@@ -58,4 +58,17 @@ class ArrayExercisesTest {
         assertEquals(12, arrayExercises.getLargestPossibleCombination(testArray));
         assertEquals(12, arrayExercises.getLargestPossibleCombination2(testArray));
     }
+
+    @Test
+    void testSortArray(){
+        int[] testArray = {10,3,4,23,2000, 100,7,1,300,-1, 7900, -19, 0};
+        int[] sortedArray = arrayExercises.sortArrayIncrementing(testArray);
+        assertEquals(-19, sortedArray[0]);
+        assertEquals(-1,sortedArray[1]);
+        assertEquals(0,sortedArray[2]);
+        assertEquals(1,sortedArray[3]);
+        assertEquals(7900, sortedArray[sortedArray.length-1]);
+    }
+
+
 }
